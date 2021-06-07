@@ -111,8 +111,9 @@ You can also read up on our [Polygon document here](https://docs.google.com/docu
 
 1. Setup up Polygon/Matic network on Metamask. In Metamask Networks -> Select Custom Network and 
 configure as below images 
-![image](.ImagesReadMe/mumbai.png)
-![image](.ImagesReadMe/mainnet.png)
+<img src="./ImagesReadMe/mumbai.png" alt="alt text" width="200"/>
+![image](./ImagesReadMe/mumbai.png)
+![image](./ImagesReadMe/mainnet.png)
 
 
 1. You will need Matic tokens in an account that will deploy contract
