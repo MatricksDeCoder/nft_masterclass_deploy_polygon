@@ -124,6 +124,8 @@ You can also read up on our [Polygon document here](https://docs.google.com/docu
 Matic Developer documentation here](https://docs.matic.network/docs/develop/truffle)
 
 1. Setup up Polygon/Matic network on Metamask under Networks Custom RPC configuration.
+
+
 <span><img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mumbai Testne" width="200"/>
 <img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mainnet" width="200"/></span>
 
