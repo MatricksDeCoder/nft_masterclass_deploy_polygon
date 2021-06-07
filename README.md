@@ -179,16 +179,16 @@ $ npm start
 ```
 
 ### Optional publish on IPFS
-```
-3. Build app
+
+1. Build app
 ```sh
 $ npm run build
 ```
-4. Publish on IPFS
+2. Publish on IPFS
 ```sh
 $ jsipfs add -r build
 ```
-5. Copy the latest generated hash and paste into the place of hash below:
+3. Copy the latest generated hash and paste into the place of hash below:
 https://ipfs.io/ipfs/hash For the first time may take a while to load dApp
 Create Human readable link [Use this site](https://bitly.com/)
 
