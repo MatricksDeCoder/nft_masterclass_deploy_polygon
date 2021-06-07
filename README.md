@@ -98,7 +98,7 @@ $ exec src/backEnd/scripts/mint.js
 $
 ```
 
-### Front End and how to use Dapp
+5. Run app on localhost front-end
 1. Run app locally 
 ```sh
 $ npm start
@@ -107,10 +107,10 @@ Enter dApp in browser at localhost:3000
 
 ### Deploying to Polygon/Matic Mumbai testnet network
 
-You can also read up on our [Polygon document here](https://docs.google.com/document/d/1iqX6hLNrKw80mvW0aXwOE6rmmcoMcfAM8NcSiXRE-_o/edit?usp=sharing)
+You can also read up on our [Polygon document here](https://docs.google.com/document/d/1iqX6hLNrKw80mvW0aXwOE6rmmcoMcfAM8NcSiXRE-_o/edit?usp=sharing) . [You can also lookup with
+Matic Developer documentation here](https://docs.matic.network/docs/develop/truffle)
 
-1. Setup up Polygon/Matic network on Metamask. In Metamask Networks -> Select Custom Network and 
-configure as below images 
+1. Setup up Polygon/Matic network on Metamask under Networks Custom RPC configuration.
 <span><img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mumbai Testne" width="200"/>
 <img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mainnet" width="200"/></span>
 
@@ -123,10 +123,18 @@ After a little while you should see a new balance in your address on Mumbai netw
 <img src="./ImagesReadMe/metamaskMatic.png" alt="Matic balance updated" width="200"/>
 
 
-
-
-1. Ensure truffle is configured for Polygon Matic Mumbai network with added configuration like below
+3. Ensure truffle is configured for Polygon Matic Mumbai Test network with added configuration like below
+Make sure you have added the private key/ mnemonic of account that received Matic tokens into .env file
+See .env.example 
 ```sh
+require('babel-register');
+require('babel-polyfill');
+require('dotenv').config();
+const HDWalletProvider = require('truffle-hdwallet-provider-privkey');
+const privateKeys = process.env.PRIVATE_KEYS || ""
+
+...
+
 module.exports = {
   networks: {
     development: {
@@ -143,9 +151,56 @@ module.exports = {
   ...
 ```
 
-2. Deploy using truffle. Ensure you ganache instance is still running or running
+2. Deploy using truffle.
 ```sh
 $ truffle migrate --network matic
 ```
+you can verify deployment on [https://mumbai-explorer.matic.today/](https://mumbai-explorer.matic.today/)
 
-3. 
+3. Mint NFT's on Matic Network( ensure you have sufficient Matic tokens)
+```sh
+$ truffle exec src/backEnd/scripts/mint.js --network matic
+$
+```
+
+4. Run app on localhost front-end and interact with app
+```sh
+$ npm start
+```
+
+### Optional publish on IPFS
+1. Install IPFS:
+```sh
+$ npm i -g ipfs 
+```
+2. Run IPFS Node in a different terminal and keep running:
+```sh
+$ jsipfs daemon
+```
+3. Build app
+```sh
+$ npm run build
+```
+4. Publish on IPFS
+```sh
+$ jsipfs add -r build
+```
+5. Copy the latest generated hash and paste into the place of hash below:
+https://ipfs.io/ipfs/hash For the first time may take a while to load dApp
+Create Human readable link [Use this site](https://bitly.com/)
+
+### Optional publish front end to Surge
+1. Run build and enter build directory
+```sh
+$ npm run build
+$ cd build
+```
+2. Install surge globally:
+```sh
+$ npm i -g surge
+```
+3. Deploy to surge. 
+```sh
+$ surge
+```
+...and follow the instructions
