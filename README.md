@@ -6,13 +6,13 @@ Dapp University NFT Collectibles Masterclass project deployed to Polygon/Network
 
 ### Technology Stack and Tools
 
-* [NodeJS](https://nodejs.org/en/)
-* [Node Version Manager](https://heynode.com/tutorial/install-nodejs-locally-nvm)
-* [Polygon/Matic](https://polygon.technology/)
-* [ERC721](https://docs.openzeppelin.com/contracts/3.x/erc721)
-* [Metamask Wallet](https://metamask.io/)
+* [Node Version Manager](https://heynode.com/tutorial/install-nodejs-locally-nvm) - node version manager
+* [Polygon/Matic](https://polygon.technology/) - Polygon Matic Network
+* [ERC721](https://docs.openzeppelin.com/contracts/3.x/erc721) - ERC721 Token standard (NFTs)
+* [Metamask Wallet](https://metamask.io/) - Metamask Wallet
 * [Truffle](https://www.trufflesuite.com/) - development framework
 * [React](https://reactjs.org/) - front end framework
+* [Redux](https://redux.js.org/) - state management framework for React
 * [Solidity](https://docs.soliditylang.org/en/v0.7.4/) - ethereum smart contract language
 * [Ganache](https://www.trufflesuite.com/ganache) - local blockchain development
 * [Web3](https://web3js.readthedocs.io/en/v1.3.0/) - library interact with ethereum nodes 
@@ -54,6 +54,7 @@ Restart your terminal
 ```sh
 $ nvm install 12.10.0
 $ nvm alias default 12.10.0
+$ nvm use default
 ```
 
 3. Install truffle globally
@@ -66,7 +67,17 @@ $ npm install -g truffle
 $ npm install -g ganache-cli
 ```
 
-5. Enter project directory and install dependancies
+5. Run IPFS
+   Install IPFS:
+```sh
+$ npm i -g ipfs 
+```
+   Run IPFS Node in a different terminal and keep running:
+```sh
+$ jsipfs daemon
+```
+
+6. Enter project directory and install dependancies
 ```sh
 $ cd nft_masterclass_1
 $ npm install 
@@ -79,15 +90,15 @@ $ npm install
 $ truffle compile 
 ```
 
-2. To test contracts 
-```sh
-$ truffle test
-```
-
 Make sure your truffle.js or truffle-config.js file is properly configured for development environment.
-3. Migrate contracts to local running instance ganache
+2. Migrate contracts to local running instance ganache
 ```sh
 $ truffle migrate --reset 
+```
+
+3. To test contracts 
+```sh
+$ truffle test
 ```
 
 4. Interact with locally deployed contracts and excute script to mint tokens
@@ -160,7 +171,6 @@ you can verify deployment on [https://mumbai-explorer.matic.today/](https://mumb
 3. Mint NFT's on Matic Network( ensure you have sufficient Matic tokens)
 ```sh
 $ truffle exec src/backEnd/scripts/mint.js --network matic
-$
 ```
 
 4. Run app on localhost front-end and interact with app
@@ -169,13 +179,6 @@ $ npm start
 ```
 
 ### Optional publish on IPFS
-1. Install IPFS:
-```sh
-$ npm i -g ipfs 
-```
-2. Run IPFS Node in a different terminal and keep running:
-```sh
-$ jsipfs daemon
 ```
 3. Build app
 ```sh
@@ -204,3 +207,7 @@ $ npm i -g surge
 $ surge
 ```
 ...and follow the instructions
+
+### Optional Matic-Ethereum bridge
+Find out how to move tokens between Ethereum network e.g Goerli testnet and Polygon Matic network e.g Matic testnet
+Follow project/guide at [https://github.com/MatricksDeCoder/ethereum_matic_bridge](https://github.com/MatricksDeCoder/ethereum_matic_bridge)

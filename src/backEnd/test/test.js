@@ -1,5 +1,7 @@
 import { tokens, ether, ETHER_ADDRESS, expectRevert, expectEvent } from './helpers'
 
+console.log("Testing")
+
 const NFT = artifacts.require('./NFT')
 
 require('chai')
