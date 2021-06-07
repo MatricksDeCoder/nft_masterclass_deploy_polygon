@@ -127,7 +127,7 @@ Matic Developer documentation here](https://docs.matic.network/docs/develop/truf
 
 
 <span><img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mumbai Testne" width="200"/>
-<img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mainnet" width="200"/></span>
+<img src="./ImagesReadMe/metamaskMatic.png" alt="configure Polygon Matic Mainnet" width="200"/></span>
 
 
 2. You will need Matic tokens in an account that will deploy contract
