@@ -1,64 +1,145 @@
-## 📃 Instructions to run & upload on IPFS:
-0. **Install node v12.10.0:**
-</br>**```curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash```
-</br>```nvm install 12.10.0```
-</br>```nvm alias default 12.10.0```
-</br>  Restart Terminal**
-1. **Install Truffle:**
-</br>**```npm i -g truffle```**
-2. **Install IPFS:**
-</br>**```npm i -g ipfs```
-Restart Terminal**
-3. **Run IPFS Node:**
-</br>**```jsipfs daemon```**
-4. **Get project directory (in new terminal window):**
-</br>**```git clone https://github.com/dappuniversity/nft_masterclass_1.git```**
-5. **Enter project directory and install dependecies:**
-</br>**```cd nft_masterclass_1 && npm i```**
-6. **Enter truffle developer mode:**
-</br>**```truffle develop```**
-7. **Migrate contracts (locally):**
-</br>**```migrate --reset```**
-8. **Mint NFTs (locally):**
-</br>**```exec src/backEnd/scripts/mint.js```**
-9. **Migrate contracts on public network (in this case Kovan):**
-</br>**a) Rename .env_example to .env and fill accordingly)
-</br>b) Get Kovan ETH i.e. from https://faucet.kovan.network/ or https://gitter.im/kovan-testnet/faucet
-</br>c) Off VPN(if got and ON), then type:
-</br>```migrate --reset --network kovan```**
-10. **Mint NFTs on public network (in this case Kovan):**
-</br>**```exec src/backEnd/scripts/mint.js --network kovan```**
-**11. Run dApp:**
-</br>**```npm start```**
-12. **Enter dApp in browser:**
-</br>**```localhost:3000```**
-13. **Connect to the dApp:**
-</br>**If running publicly set MetaMask network to Kovan.
-</br>If running locally set MetaMask network to (Settings>Networks>Add Network):**
-</br>![MetaMask setting](https://i.gyazo.com/b34e8bec896844352e70a7382e1f18d4.png)
+# NFT Collectibles Masterclass project deployed on Polygon/Matic network
+
+### About
+Dapp University NFT Collectibles Masterclass project deployed to Polygon/Network 
+[Read accompanying document on Polygon](https://docs.google.com/document/d/1iqX6hLNrKw80mvW0aXwOE6rmmcoMcfAM8NcSiXRE-_o/edit?usp=sharing)  
+
+### Technology Stack and Tools
+
+* [NodeJS](https://nodejs.org/en/)
+* [Node Version Manager](https://heynode.com/tutorial/install-nodejs-locally-nvm)
+* [Polygon/Matic](https://polygon.technology/)
+* [ERC721](https://docs.openzeppelin.com/contracts/3.x/erc721)
+* [Metamask Wallet](https://metamask.io/)
+* [Truffle](https://www.trufflesuite.com/) - development framework
+* [React](https://reactjs.org/) - front end framework
+* [Solidity](https://docs.soliditylang.org/en/v0.7.4/) - ethereum smart contract language
+* [Ganache](https://www.trufflesuite.com/ganache) - local blockchain development
+* [Web3](https://web3js.readthedocs.io/en/v1.3.0/) - library interact with ethereum nodes 
+* [JavaScript](https://www.javascript.com/) - logic front end and testing smart contracts
+* [Infura](https://infura.io/) - connection to ethereum networks 
+* [Open Zeppelin](https://infura.io/) - smart contract libraries 
+
+##### Folder / Directory Structure (key folders)
+* NFT Collectibles Masterclass
+  * node_modules
+  * public 
+    * index.html
+  * src
+    * backEnd
+        * abis
+        * contracts
+        * migrations
+        * scripts
+        * test
+    * components
+    * images
+    * store
+    * index.js
+    * .env
+    * .env.example
+    * truffle.js
+    * package.json
+
+### Preconfiguration, Installation and Running project locally 
+
+1. You will need nvm to install specific version node v12.10.0
+```sh
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+$ source ~/.nvm/nvm.sh
+```
+Restart your terminal
+
+2. Install node v12.10.0
+```sh
+$ nvm install 12.10.0
+$ nvm alias default 12.10.0
+```
+
+3. Install truffle globally
+```sh
+$ npm install -g truffle
+```
+
+4. If opting to use ganache-cli vs [Ganache GUI](https://www.trufflesuite.com/ganache), install ganache-cli globally
+```sh
+$ npm install -g ganache-cli
+```
+
+5. Enter project directory and install dependancies
+```sh
+$ cd nft_masterclass_1
+$ npm install 
+```
+
+### Migrating contracts and Testing Locally to ensure all is working well
+
+1. To compile contracts e.g you make changes to contracts
+```sh
+$ truffle compile 
+```
+
+2. To test contracts 
+```sh
+$ truffle test
+```
+
+Make sure your truffle.js or truffle-config.js file is properly configured for development environment.
+3. Migrate contracts to local running instance ganache
+```sh
+$ truffle migrate --reset 
+```
+
+4. Interact with locally deployed contracts and excute script to mint tokens
+```sh
+$ truffle develop
+$ migrate --reset
+$ exec src/backEnd/scripts/mint.js
+$
+```
+
+### Front End and how to use Dapp
+1. Run app locally 
+```sh
+$ npm start
+```
+Enter dApp in browser at localhost:3000
+
+### Deploying to Polygon/Matic Mumbai testnet network
+
+You can also read up on our [Polygon document here](https://docs.google.com/document/d/1iqX6hLNrKw80mvW0aXwOE6rmmcoMcfAM8NcSiXRE-_o/edit?usp=sharing)
+
+1. Setup up Polygon/Matic network on Metamask. In Metamask Networks -> Select Custom Network and 
+configure as below images 
+![image](.src/images/mumbai.png)
+![image](.src/images/mainnet.png)
 
 
-## 📃 Instructions to publish on IPFS:
-0. **Run IPFS Node (if not running already)**
-</br>**```jsipfs daemon```**
-1. **Create build directory (inside project directory)**
-</br>**```npm run build```**
-2. **Publish on IPFS**
-</br>**```jsipfs add -r build```**
-3. **Copy the latest generated hash and paste into the place of hash below:**
-</br>**https://ipfs.io/ipfs/hash**
-</br>**For the first time may take a while to load dApp**
-4. **Create Human readable link**
-</br>**[Use this site](https://bitly.com/)**
+1. You will need Matic tokens in an account that will deploy contract
+We will get MATIC tokens from faucet [https://faucet.matic.network/](https://faucet.matic.network/) into 
+a Metamask Account
 
-## 📃 Instructions to publish on Surge:
-0. **Create build directory (inside project directory):**
-</br>**```npm run build```**
-1. **Enter build directory:**
-</br>**```cd build```**
-1. **Install Surge:**
-</br>**```npm i -g surge```**
-2. **Publish on Surge:**
-</br>**```surge```**
-</br>**...and follow the instructions**
-# deploy_polygon
+1. Ensure truffle is configured for Polygon Matic Mumbai network with added configuration like below
+```sh
+module.exports = {
+  networks: {
+    development: {
+      ...
+    },
+    matic: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.matic.today`),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+  },
+  ...
+```
+
+2. Deploy using truffle. Ensure you ganache instance is still running or running
+```sh
+$ truffle migrate --network matic
+```
+
+3. 
