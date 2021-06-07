@@ -167,7 +167,10 @@ module.exports = {
 2. Deploy using truffle.
 ```sh
 $ truffle migrate --network matic
+$ truffle networks 
 ```
+truffle networks above will show you the networks to which NFT contract has been deployed
+copy contract address and or transaction hash from console output and ...
 you can verify deployment on [https://mumbai-explorer.matic.today/](https://mumbai-explorer.matic.today/)
 
 3. Mint NFT's on Matic Network( ensure you have sufficient Matic tokens)

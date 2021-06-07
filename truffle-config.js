@@ -1,8 +1,9 @@
 require('babel-register');
 require('babel-polyfill');
 require('dotenv').config();
-const HDWalletProvider = require('truffle-hdwallet-provider-privkey');
-const privateKeys = process.env.PRIVATE_KEYS || ""
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+let privateKey = process.env.PRIVATE_KEYS || ""
+//privateKey = Buffer.from(privateKey, 'hex').toString()
 
 module.exports = {
   networks: {
@@ -11,49 +12,12 @@ module.exports = {
       port: 8545,
       network_id: "*" // Match any network id
     },
-    kovan: {
-      provider: function() {
-        return new HDWalletProvider(
-          privateKeys.split(','), // Array of account private keys
-          `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`// Url to an Ethereum Node
-        )
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 42
-    },
-    main: {
-      provider: function() {
-        return new HDWalletProvider(
-          privateKeys.split(','), // Array of account private keys
-          `https://main.infura.io/v3/${process.env.INFURA_API_KEY}`// Url to an Ethereum Node
-        )
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 1
-    },
-    rinkeby: {
-      provider: function() {
-        return new HDWalletProvider(
-          privateKeys.split(','), // Array of account private keys
-          `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`// Url to an Ethereum Node
-        )
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 4
-    },
-    ropsten: {
-      provider: function() {
-        return new HDWalletProvider(
-          privateKeys.split(','), // Array of account private keys
-          `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`// Url to an Ethereum Node
-        )
-      },
-      gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
-      network_id: 3
+    matic: {
+      provider: () => new HDWalletProvider([privateKey], `https://rpc-mumbai.matic.today`),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
     }
   },
   contracts_directory: './src/backEnd/contracts/',
