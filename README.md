@@ -111,14 +111,14 @@ You can also read up on our [Polygon document here](https://docs.google.com/docu
 
 1. Setup up Polygon/Matic network on Metamask. In Metamask Networks -> Select Custom Network and 
 configure as below images 
-<img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mumbai Testne" width="200"/>
-<img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mainnet" width="200"/>
+<span><img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mumbai Testne" width="200"/>
+<img src="./ImagesReadMe/mumbai.png" alt="configure Polygon Matic Mainnet" width="200"/></span>
 
 
 2. You will need Matic tokens in an account that will deploy contract
 We will get MATIC tokens from faucet [https://faucet.matic.network/](https://faucet.matic.network/) into 
 a Metamask Account. Copy Metamask address and request MATIC. See image below
-<img src="./ImagesReadMe/testMatic.png" alt="request testnet tokens" width="200"/>
+<img src="./ImagesReadMe/testMatic.png" alt="request testnet tokens" width="300"/>
 After a little while you should see a new balance in your address on Mumbai network
 <img src="./ImagesReadMe/metamaskMatic.png" alt="Matic balance updated" width="200"/>
 
