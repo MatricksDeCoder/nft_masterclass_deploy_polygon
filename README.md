@@ -216,5 +216,7 @@ $ surge
 ...and follow the instructions
 
 ### Optional Matic-Ethereum bridge
+As you develop on Matic you may need to make use of bridges between the two networks 
+
 Find out how to move tokens between Ethereum network e.g Goerli testnet and Polygon Matic network e.g Matic testnet
-Follow project/guide at [https://github.com/MatricksDeCoder/ethereum_matic_bridge](https://github.com/MatricksDeCoder/ethereum_matic_bridge)
+Follow project/guide at [https://github.com/MatricksDeCoder/ethereum_matic_bridge](https://github.com/MatricksDeCoder/ethereum_matic_bridge) to move DummyERC20Token from Goerli to Mumbai using POS Bridge. 
