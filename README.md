@@ -65,19 +65,22 @@ $ npm install -g truffle
 4. If opting to use ganache-cli vs [Ganache GUI](https://www.trufflesuite.com/ganache), install ganache-cli globally
 ```sh
 $ npm install -g ganache-cli
+$ ganache-cli
 ```
+Run ganache-cli in different terminal and keep running
 
 5. Run IPFS
    Install IPFS:
 ```sh
 $ npm i -g ipfs 
 ```
-   Run IPFS Node in a different terminal and keep running:
+
+6.  Run IPFS Node in a different terminal and keep running:
 ```sh
 $ jsipfs daemon
 ```
 
-6. Enter project directory and install dependancies
+7. Enter project directory and install dependancies
 ```sh
 $ cd nft_masterclass_1
 $ npm install 
@@ -103,9 +106,8 @@ $ truffle test
 
 4. Interact with locally deployed contracts and excute script to mint tokens
 ```sh
-$ truffle develop
-$ migrate --reset
-$ exec src/backEnd/scripts/mint.js
+$ truffle migrate --reset
+$ truffle exec src/backEnd/scripts/mint.js --network development
 $
 ```
 
